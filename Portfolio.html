@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>ポートフォリオ</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body class="container">
+        <header>
+            <p align="right">2023年4月26日</p>
+            <p align="left">株式会社〇〇〇</p>
+            <p align="left">採用担当者 様</p>
+            <p align="right">大原簿記情報ビジネス医療専門学校松本校</p>
+            <p align="right">システム開発コース　沖増 彦</p>
+            <h1>スキルシート</h1>
+            <p>クリックで詳細を表示</p>
+        </header>
+        <div id="app" class="text-center">
+            <h5 v-on:click="office = !office"  class="hoverable">Office 系</h5><br>
+            <transition>
+                <p v-if="office">
+                    <p1><img v-bind:src="fileWord">Word</p1><br>
+                    <p2>文書の作成方法を学習しました。 その他の授業内でも作業の進捗<br>状況や作成したプログラムの設計書などで活用しています。</p2><br>
+                    <br>
+                    <p1><img v-bind:src="fileExcel">Excel</p1><br>
+                    <p2>表などの作成方法を学習しました。表計算などが出来ます。</p2><br>
+                    <br>
+                    <p1><img v-bind:src="filePower">PowerPoint</p1><br>
+                    <p2>プレゼンテーションなどで使う文書の作成方法を学習しました。<br>プログラムの設計書などで活用しています。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･Office</p2><br>
+                    <p2>･Windows OS</p2><br>
+                    <br>
+                    <button v-if="office" v-on:click="office = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="puroguram = !puroguram" class="hoverable">プログラミング言語</h5><br>
+            <transition>
+                <p v-if="puroguram">
+                    <p1>HTML</p1><br>
+                    <p2>文章の表示、入力フォーム、ボタンの追加などの基本を学びました。<br>後述する CSS と合わせて自己紹介ホームページを作りました。</p2><br>
+                    <br>
+                    <p1>CSS</p1><br>
+                    <p2>HTML と合わせて学習しました。文章にデザインを施し大きさや背<br>景などを変えて見た目を良くしました。フォントサイズ、色、画像<br>や文字の配置などの変更方法と外部参照を学びました。</p2><br>
+                    <br>
+                    <p1>JavaScript</p1><br>
+                    <p2>HTML、CSS と合わせて学習しました。現在時刻、日付の表示や計<br>算などを使えるようになりました。If 構文や繰り返し実行する方法<br>を学習しました。</p2><br>
+                    <br>
+                    <p1>PHP</p1><br>
+                    <p2>Web ページを動的に生成する機能を学習しました。文章の表示、<br>入力フォーム、ボタンの追加などの基本操作に加えてデータベース<br>を使いデータの保管や取り出しなどを利用したサイトを授業内で<br>制作しました。</p2><br>
+                    <br>
+                    <p1>Python</p1><br>
+                    <p2>Visual Studio Code 内のターミナルを使用しプログラムの実行、<br>作成、テストを行いました。文章の表示、入力フォーム、ボタンの<br>追加などの基本操作に加えて変数、型、関数などの機能を学習し、<br>それを応用して bot の作成などを行いました。<br> Version 3.10.6</p2><br>
+                    <br>
+                    <p1>Java</p1><br>
+                    <p2>オブジェクト指向プログラミングを学習しました。文章の表示、<br>入力フォーム、ボタンの追加などの基本操作に加えてメソッド作成<br>や多重定義、クラスの作成や継承、インタフェースなどを学習しました。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･<a v-bind:href="urlVSC">Visual Studio Code</a></p2><br>
+                    <p2>･Windows OS</p2><br>
+                    <br>
+                    <button v-if="puroguram" v-on:click="puroguram = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="framework = !framework" class="hoverable">フレームワーク</h5><br>
+            <transition>
+                <p v-if="framework">
+                    <p1>Django</p1><br>
+                    <p2>Visual Studio Code とコマンドプロントを使用し Web アプリケー<br>ションの処理の流れ、構築手順、構築手段などを学習しました。<br>Python でメール送信やセキュリティなどの実行方法や<br>ルーティング、ビュー、フォームなどの設定を学習しました。</p2><br>
+                    <br>
+                    <p1>Vue.js</p1><br>
+                    <p2>Vue インスタンスの作成、マスタッシュタグでの表示、transition <br>タグ、各ディレクティブの使用方法などの基本操作を学習しました。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･<a v-bind:href="urlVSC">Visual Studio Code</a></p2><br>
+                    <p2>･Windows OS</p2><br>
+                    <p2>･コマンドプロント</p2><br>
+                    <br>
+                    <button v-if="framework" v-on:click="framework = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="os = !os" class="hoverable">OS</h5><br>
+            <transition>
+                <p v-if="os">
+                    <p1>Linux</p1><br>
+                    <p2>CentOS を使用し学習しました。ファイルやディレクトリの参照、<br>コピー、移動、削除など基本的なコマンド操作に加えて vi 操作や<br>ユーザの作成、ファイル所有者の変更方法などを学習しました。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･<a v-bind:href="urlCENT">CentOS 7</a></p2><br>
+                    <br>
+                    <button v-if="os" v-on:click="os = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="paas = !paas" class="hoverable">クラウドコンピューティング<br>プラットフォーム</h5><br>
+            <transition>
+                <p v-if="paas">
+                    <p1>AWS</p1><br>
+                    <p2>ストレージサービス、料金モデルや、EC2、RDS、VPCなどの各サ<br>ービスについて学習しました。指定された案件に沿う設計図をグル<br>ープワークで作成しました。AWS の EC2 などのサービスを用いて<br>サーバーを構築しDjango の授業で作成した Web サイトをデプロ<br>イさせるなどを行いました。 </p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･<a v-bind:href="urlAWSMC">AWSマネジメントコンソール</a></p2><br>
+                    <p2>･<a v-bind:href="urlAWSCLI">AWS CLI</a></p2><br>
+                    <br>
+                    <button v-if="paas" v-on:click="paas = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="aicp = !aicp" class="hoverable">機械学習</h5><br>
+            <transition>
+                <p v-if="aicp">
+                    <p1>AI</p1><br>
+                    <p2>GoogleColaboratoryを使用して学習しました。CSVファイルの読<br>み込みや欠損値、外れ値の処理、決定木、分類木、回帰木それぞれ<br>の分析を学習しました。</p2><br>
+                    <br>
+                    <p1>AWS+AI</p1><br>
+                    <p2>AWS のサービスを用いて機械学習に取り組みました。音声合成や<br>画像の分析、画像内から文字列や表の検出、文章から感情を分析さ<br>せるなどを行いました。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･<a v-bind:href="urlGoogle">GoogleColaboratory</a></p2><br>
+                    <p2>･<a v-bind:href="urlVSC">Visual Studio Code</a></p2><br>
+                    <p2>･<a v-bind:href="urlAWSCLI">AWS CLI</a></p2><br>
+                    <p2>･Windows OS</p2><br>
+                    <p2>･コマンドプロント</p2><br>
+                    <br>
+                    <button v-if="aicp" v-on:click="aicp = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="teams = !teams" class="hoverable">コラボレーションツール</h5><br>
+            <transition>
+                <p v-if="teams">
+                    <p1><img v-bind:src="fileTeams">Teams</p1><br>
+                    <p2>1年次から利用しています。教師、クラスメイトとの連絡やファイ<br>ル、フォルダーの共有などで使用しました。 </p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･Windows PC</p2><br>
+                    <p2>･iPhone</p2><br>
+                    <br>
+                    <button v-if="teams" v-on:click="teams = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <h5 v-on:click="web = !web" class="hoverable">Webブラウザ</h5><br>
+            <transition>
+                <p v-if="web">
+                    <p1><img v-bind:src="fileEdge">Microsoft Edge</p1><br>
+                    <p2>HTML や JavaScript の実行で使用しました。他にも情報の検索や<br>作成したWebページの表示を行いました。</p2><br>
+                    <br>
+                    <p1><img v-bind:src="fileChrome">Google Chrome</p1><br>
+                    <p2>GoogleColaboratory で使用しました。</p2><br>
+                    <br>
+                    <p1>使用ツール</p1><br>
+                    <p2>･Windows PC</p2><br>
+                    <br>
+                    <button v-if="web" v-on:click="web = false" class="hoverable">閉じる×</button>
+                </p>
+            </transition>
+            <button @click="scrollToTop" style="font-size: 14px;">上に戻る</button>
+        </div>
+        <footer>
+            <p>最終更新2023年4月25日</p>
+        </footer>
+
+        
+        <script>
+            new Vue({
+				el: '#app',
+				data: {
+                    office:false,
+                    puroguram:false,
+                    framework:false,
+                    os:false,
+                    paas:false,
+                    aicp:false,
+                    teams:false,
+                    web:false,
+                    urlGoogle:'https://colab.research.google.com/?hl=ja',
+                    urlVSC:'https://code.visualstudio.com/',
+                    urlCENT:'https://www.centos.org/centos-linux/',
+                    urlAWSMC:'https://aws.amazon.com/jp/console/',
+                    urlAWSCLI:'https://aws.amazon.com/jp/cli/',
+                    fileWord:'jpg/Word.jpg',
+                    fileExcel:'jpg/Excel.jpg',
+                    filePower:'jpg/PowerPoint.jpg',
+                    fileChrome:'jpg/Chrome.jpg',
+                    fileTeams:'jpg/Teams.jpg',
+                    fileEdge:'jpg/Edge.jpg',
+				},
+                methods: {
+                    scrollToTop() {
+                        window.scrollTo({
+                            top:0,
+                            behavior:'smooth'
+                        });
+                    }
+                }
+			})
+        </script>
+        <style>
+			/* 現れている最中と、消えている最中は、0.5秒 */
+			.v-enter-active, .v-leave-active {
+				transition: 0.5s;
+			}
+			/* 現れる前の状態と、消えたときの状態は、透明度0で、下へ50移動*/
+			.v-enter, .v-leave-to {
+				opacity: 0;
+				transform: translateY(50px)
+			}
+            
+		</style>
+    </body>
+</html>
